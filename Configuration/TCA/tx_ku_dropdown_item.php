@@ -7,7 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
- $extKey ='ku_dropdown';
+$extKey ='ku_dropdown';
 
 return [
     'ctrl' => [
@@ -16,7 +16,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'title' => 'LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:add_link',
+        'title' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
@@ -65,7 +65,7 @@ return [
         ],
         'visibility' => [
             'showitem' => '
-                hidden;LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:add_link
+                hidden;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link
             '
         ],
         // hidden but needs to be included all the time, so sys_language_uid is set correctly
@@ -77,7 +77,7 @@ return [
     'columns' => [
         'tt_content' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:add_link',
+            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -155,7 +155,7 @@ return [
         ],
         'header' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:link_text',
+            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:link_text',
             'config' => [
                 'type' => 'input',
                 'size' => 25,
@@ -164,7 +164,7 @@ return [
             ],
         ],
         'link' => [
-            'label' => 'LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:link_item',
+            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:link_item',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',

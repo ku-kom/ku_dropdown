@@ -37,6 +37,11 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
     // Assign Icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$contentType] = 'ku-bootstrap-dropdown-icon';
 
+    // New palette
+    $GLOBALS['TCA']['tt_content']['palettes']['dropdown_content'] = array(
+        'showitem' => 'header,--linebreak--,tx_ku_dropdown_item','canNotCollapse' => 1
+    );
+
     // Configure element type
     $GLOBALS['TCA']['tt_content']['types'][$contentType] = array_replace_recursive(
         $GLOBALS['TCA']['tt_content']['types'][$contentType],
@@ -44,9 +49,7 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
             'showitem' => '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,tx_ku_dropdown_item,
-            --div--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:settings;
-                LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:advanced,
+                --palette--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:title;dropdown_content,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -61,6 +64,14 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
             ',
+            'columnsOverrides' => [
+                'header' => [
+                    'config' => [
+                        'size' => 25,
+                        'max' => 50,
+                    ]
+                ],
+            ]
         ]
     );
 

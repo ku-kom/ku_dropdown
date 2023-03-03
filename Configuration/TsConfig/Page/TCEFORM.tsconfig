@@ -39,6 +39,14 @@ TCEFORM {
             }
         }
 
+        header {
+           types {
+                ku_dropdown {
+                    label = LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:dropdown_btn_description
+                }
+            }
+        }
+
         subheader {
            types {
                 ku_dropdown {

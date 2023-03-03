@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the package bk2k/bootstrap-package.
+ * This file is part of the package ku_dropdown.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
@@ -13,8 +13,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.99-12.1.0',
-            'bootstrap_package' => '*'
+            'typo3' => '11.5.99-12.1.0'
         ]
     ],
     'autoload' => [

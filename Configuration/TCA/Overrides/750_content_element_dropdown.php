@@ -76,16 +76,18 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
         ]
     );
 
+    // Add Inline records
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'tx_ku_dropdown_item' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
+            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_links',
             'config' => [
                 'type' => 'inline',
                 'minitems' => 1,
                 'foreign_table' => 'tx_ku_dropdown_item',
                 'foreign_field' => 'tt_content',
                 'appearance' => [
+                    'newRecordLinkTitle' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
                     'useSortable' => true,
                     'showSynchronizationLink' => true,
                     'showAllLocalizationLink' => true,

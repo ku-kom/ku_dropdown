@@ -2,19 +2,6 @@
 #### CTYPE: DROPDOWN ####
 ##########################
 
-lib.contentElement {
-    templateRootPaths {
-        7 = EXT:ku_dropdown/Resources/Private/Templates/ContentElements/
-    }
-    partialRootPaths {
-        7 = EXT:ku_dropdown/Resources/Private/Partials/ContentElements/
-    }
-    layoutRootPaths {
-        7 = EXT:ku_dropdown/Resources/Private/Layouts/ContentElements/
-    }
-}
-
-
 tt_content.ku_dropdown >
 tt_content.ku_dropdown =< lib.contentElement
 tt_content.ku_dropdown {
@@ -23,7 +10,34 @@ tt_content.ku_dropdown {
     ### TEMPLATE ###
     ################
     templateName = Dropdown
+    templateRootPaths {
+        10 = EXT:ku_dropdown/Resources/Private/Templates/ContentElements/
+        20 = {$ku_dropdown.templates.templateRootPath}
+    }
+	partialRootPaths {
+		10 = EXT:ku_dropdown/Resources/Private/Partials/ContentElements/
+        20 = {$ku_dropdown.templates.partialRootPath}
+	}
 
+    layoutRootPaths {
+        10 = EXT:ku_dropdown/Resources/Private/Layouts/ContentElements/
+        20 = {$ku_dropdown.templates.layoutRootPath}
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            if.isTrue.field = tx_ku_dropdown_items
+            table = tt_content
+            uidInList.field = tx_ku_dropdown_items
+            pidInList = 0
+            orderBy = sorting
+            as = listlinks
+        }
+    }
 }
 
 ##########################

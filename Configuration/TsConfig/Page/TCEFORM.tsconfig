@@ -1,0 +1,44 @@
+TCEFORM {
+    tt_content {
+        # cType ku_dropdown:
+        header_layout {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+
+        header_link {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+
+        subheader {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+
+        header_position {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+
+        date {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+    }
+}

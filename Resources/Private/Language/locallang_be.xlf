@@ -12,6 +12,12 @@
         <trans-unit id="description">
             <source>Insert a list of link as a dropdown</source>
         </trans-unit>
+        <trans-unit id="dropdown_btn">
+            <source>List button</source>
+        </trans-unit>
+         <trans-unit id="dropdown_btn_description">
+            <source>Title in the drop down list</source>
+        </trans-unit>
         <trans-unit id="add_link">
             <source>Add link</source>
         </trans-unit>

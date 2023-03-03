@@ -1,8 +1,8 @@
+# KU Bootstrap Dropdowns
 
-======================
-KU Bootstrap Buttons
-======================
+### This is a TYPO3 extension of standalone dropdowns or link listsbased on Bootstrap 5.x.
 
-Standalone Buttons for the Bootstrap Package
+## Developed for
+TYPO3 v. 11.5, PHP 8.1
 
-Based on project https://github.com/linawolf/ku_dropdown
+## Contains content elements with options to add links or records to create a select dropdown list.

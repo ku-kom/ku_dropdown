@@ -4,41 +4,27 @@
 
     <f:flashMessages />
 
-    <f:variable name="modal-id">{data.uid}</f:variable>
+    <div class="dropdown ku-linklist">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{data.tx_ku_dropdown_btn}</a>
+        <f:if condition="{listlinks}">
+            <ul class="dropdown-menu">
+                <f:for each="{listlinks}" as="link">
+                    <f:format.raw>
+                        <li><a class="dropdown-item" href="#">
+                                <f:cObject typoscriptObjectPath="tt_content" data="{link.data}" /></a></li>
+                    </f:format.raw>
+                </f:for>
+            </ul>
+        </f:if>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{modal-id}">
-        <f:format.raw>{data.tx_ku_dropdown_button_label}</f:format.raw>
-    </button>
+        <f:debug>{_all}</f:debug>
 
-    <div class="modal fade" id="modal-{modal-id}" tabindex="-1" aria-labelledby="label-{modal-id}" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable {data.pi_flexform.size} {f:if(condition: '{data.pi_flexform.center} == 1', then: ' modal-dialog-centered')}">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="label-{modal-id}">
-                        <f:if condition="{data.tx_ku_dropdown_modal_title}">
-                            <f:format.raw>{data.tx_ku_dropdown_modal_title}</f:format.raw>
-                        </f:if>
-                    </h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{f:translate(key: 'modal_close', extensionName: 'ku_dropdown')}"></button>
-                </div>
-                <div class="modal-body">
-                    <f:if condition="{data.bodytext}">
-                        <f:format.raw>{data.bodytext}</f:format.raw>
-                    </f:if>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">{f:translate(key: 'modal_close', extensionName: 'ku_dropdown')}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <f:if condition="{lib.ku_dropdown.pagecss !== ''}">
-        <f:asset.css identifier="modalCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagecss')}" />
-    </f:if>
-    <f:if condition="{lib.ku_dropdown.pagejs !== ''}">
-        <f:asset.script identifier="modalJs" src="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagejs')}" />
-    </f:if>
+        <f:if condition="{lib.ku_dropdown.pagecss !== ''}">
+            <f:asset.css identifier="modalCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagecss')}" />
+        </f:if>
+        <f:if condition="{lib.ku_dropdown.pagejs !== ''}">
+            <f:asset.script identifier="modalJs" src="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagejs')}" />
+        </f:if>
 </f:section>
 
 </html>

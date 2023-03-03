@@ -1,6 +1,6 @@
 # KU Bootstrap Dropdowns
 
-This is a TYPO3 extension of standalone dropdowns or link listsbased on Bootstrap 5.x.
+This is a TYPO3 extension of standalone dropdowns or link list sbased on Bootstrap 5.x.
 
 ## Developed for
 TYPO3 v. 11.5, PHP 8.1

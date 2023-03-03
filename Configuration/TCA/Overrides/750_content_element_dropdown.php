@@ -69,6 +69,7 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
                     'config' => [
                         'size' => 25,
                         'max' => 50,
+                        'eval' => 'trim,required',
                     ]
                 ],
             ]

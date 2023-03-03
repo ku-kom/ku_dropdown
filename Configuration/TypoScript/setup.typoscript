@@ -30,12 +30,15 @@ tt_content.ku_dropdown {
     dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
-            if.isTrue.field = tx_ku_dropdown_items
-            table = tt_content
-            uidInList.field = tx_ku_dropdown_items
-            pidInList = 0
+            table = tx_ku_dropdown_item
+            pidInList.field = pid
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
             orderBy = sorting
-            as = listlinks
+            as = linklist
         }
     }
 }

@@ -44,9 +44,9 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
             'showitem' => '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,tx_ku_dropdown_btn,tx_ku_dropdown_items,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,tx_ku_dropdown_item,
             --div--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:settings;
-            LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:advanced,
+                LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:advanced,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -65,34 +65,28 @@ call_user_func(function ($extKey ='ku_dropdown', $contentType ='ku_dropdown') {
     );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', [
-        'tx_ku_dropdown_btn' => [
+        'tx_ku_dropdown_item' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:dropdown_btn',
-            'description' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:dropdown_btn_description',
+            'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
             'config' => [
-                'type' => 'input',
-                'max' => 50,
-                'eval' => 'trim,required',
-                'autocomplete' => true
+                'type' => 'inline',
+                'minitems' => 1,
+                'foreign_table' => 'tx_ku_dropdown_item',
+                'foreign_field' => 'tt_content',
+                'appearance' => [
+                    'useSortable' => true,
+                    'showSynchronizationLink' => true,
+                    'showAllLocalizationLink' => true,
+                    'showPossibleLocalizationRecords' => true,
+                    'expandSingle' => true,
+                    'enabledControls' => [
+                        'localize' => true,
+                    ]
+                ],
+                'behaviour' => [
+                    'mode' => 'select',
+                ]
             ],
         ],
-        'tx_ku_dropdown_items' => [
-             'exclude' => true,
-             'label' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_link',
-             'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'tt_content',
-                'maxitems' => 20,
-                'minitems' => 1,
-                'size' => 5,
-                'default' => 0,
-                'suggestOptions' => [
-                    'default' => [
-                        'additionalSearchFields' => 'header, subheader'
-                    ],
-                ],
-         ],
-      ],
     ]);
 });

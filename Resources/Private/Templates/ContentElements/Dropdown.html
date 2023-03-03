@@ -5,19 +5,12 @@
     <f:flashMessages />
 
     <div class="dropdown ku-linklist">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{data.tx_ku_dropdown_btn}</a>
-        <f:if condition="{listlinks}">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{data.header}</a>
+        <f:if condition="{linklist}">
             <ul class="dropdown-menu">
-                <f:for each="{listlinks}" as="link">
-                    <f:format.raw>
-                        <li><a class="dropdown-item" href="#">
-                                <f:cObject typoscriptObjectPath="tt_content" data="{link.data}" /></a></li>
-                    </f:format.raw>
-                </f:for>
+                <f:render partial="Items" arguments="{_all}" />
             </ul>
         </f:if>
-
-        <f:debug>{_all}</f:debug>
 
         <f:if condition="{lib.ku_dropdown.pagecss !== ''}">
             <f:asset.css identifier="modalCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagecss')}" />

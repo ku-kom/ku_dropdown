@@ -1,6 +1,28 @@
 TCEFORM {
     tt_content {
         # cType ku_dropdown:
+
+        CType {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+        colPos {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
+        tx_container_parent {
+           types {
+                ku_dropdown {
+                    disabled = 1
+                }
+            }
+        }
         header_layout {
            types {
                 ku_dropdown {

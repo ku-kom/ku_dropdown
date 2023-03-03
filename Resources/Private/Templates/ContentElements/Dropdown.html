@@ -4,6 +4,8 @@
 
     <f:flashMessages />
 
+    <f:debug>{_all}</f:debug>
+
     <div class="dropdown ku-linklist">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{data.header}</a>
         <f:if condition="{linklist}">
@@ -13,10 +15,10 @@
         </f:if>
 
         <f:if condition="{lib.ku_dropdown.pagecss !== ''}">
-            <f:asset.css identifier="dropdownCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagecss')}" />
+            <f:asset.css identifier="{data.CType}_css" href="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagecss')}" />
         </f:if>
         <f:if condition="{lib.ku_dropdown.pagejs !== ''}">
-            <f:asset.script identifier="dropdownJs" src="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagejs')}" />
+            <f:asset.script identifier="{data.CType}_js" src="{f:cObject(typoscriptObjectPath: 'lib.ku_dropdown.pagejs')}" />
         </f:if>
 </f:section>
 

@@ -1,0 +1,21 @@
+{
+    "name": "university-of-copenhagen/ku-dropdown",
+    "type": "typo3-cms-extension",
+    "description": "Standalone Bootstrap dropdowns",
+    "license": [
+        "GPL-2.0+"
+    ],
+    "require": {
+        "typo3/cms-core": "^11.5 || main-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "UniversityOfCopenhagen\\KuDropDown\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "ku_dropdown"
+        }
+    }
+}

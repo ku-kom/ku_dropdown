@@ -1,0 +1,45 @@
+##########################
+#### CTYPE: DROPDOWN ####
+##########################
+
+lib.contentElement {
+    templateRootPaths {
+        7 = EXT:ku_dropdown/Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        7 = EXT:ku_dropdown/Resources/Private/Partials/ContentElements/
+    }
+    layoutRootPaths {
+        7 = EXT:ku_dropdown/Resources/Private/Layouts/ContentElements/
+    }
+}
+
+
+tt_content.ku_dropdown >
+tt_content.ku_dropdown =< lib.contentElement
+tt_content.ku_dropdown {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Dropdown
+
+}
+
+##########################
+#### OPTION TO ADD CSS ###
+##########################
+lib.ku_dropdown.pagecss = TEXT
+lib.ku_dropdown.pagecss {
+    if.isTrue = {$ku_dropdown.assets.extraCss}
+    value = {$ku_dropdown.assets.extraCss}
+}
+
+##########################
+#### OPTION TO ADD JS ####
+##########################
+lib.ku_dropdown.pagejs = TEXT
+lib.ku_dropdown.pagejs {
+    if.isTrue = {$ku_dropdown.assets.extraJs}
+    value = {$ku_dropdown.assets.extraJs}
+}

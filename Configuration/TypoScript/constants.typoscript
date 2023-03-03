@@ -1,0 +1,16 @@
+ku_dropdown {
+    templates {
+        # cat=KU bootstrap dropdowns/file; type=string; label=Layout Root Path: Path to templates (with a trailing slash).
+        templateRootPath = EXT:ku_dropdown/Resources/Private/Templates/
+        # cat=KU bootstrap dropdowns/file; type=string; label=Partial Root Path: Path to partials (with a trailing slash).
+        partialRootPath = EXT:ku_dropdown/Resources/Private/Partials/
+        # cat=KU bootstrap dropdowns/file; type=string; label=Layout Root Path: Path to layout (with a trailing slash).
+        layoutRootPath = EXT:ku_dropdown/Resources/Private/Layouts/
+    }
+    assets {
+        # cat=KU bootstrap dropdowns/Assets/; type=string; label=CSS assets: Path to stylesheet.
+        extraCss =
+        # cat=KU bootstrap dropdowns/Assets/; type=string; label=JavaScript assets: Path to javaScript file.
+        extraJs = 
+    }
+}

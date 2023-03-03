@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.interactive {
+    elements {
+        ku_dropdown {
+            iconIdentifier = ku-bootstrap-dropdown-icon
+            title = LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:title
+            description = LLL:EXT:ku_dropdown/Resources/Private/Language/locallang_be.xlf:description
+            tt_content_defValues {
+                CType = ku_dropdown
+            }
+        }
+    }
+    show := addToList(ku_dropdown)
+}

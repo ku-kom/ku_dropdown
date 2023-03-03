@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-11-15UTC07:12:050">
+        <header>
+            <authorName>Nanna Ellegaard</authorName>
+            <authorEmail>nel@adm.ku.dk</authorEmail>
+        </header>
+        <body>
+        <trans-unit id="title">
+            <source>Link list</source>
+        </trans-unit>
+        <trans-unit id="description">
+            <source>Insert a list of link as a dropdown</source>
+        </trans-unit>
+        <trans-unit id="add_link">
+            <source>Add link</source>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

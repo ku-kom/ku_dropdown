@@ -60,8 +60,8 @@ return [
         ],
         'linkitems' => [
             'showitem' => '
-            header,
-            link,
+                header,
+                link,
             '
         ],
         'general' => [
